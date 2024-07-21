@@ -30,5 +30,10 @@ namespace CollectionViewPerformanceXamarin {
         public static void resetPaintUpdates() {
             paintUpdates = 0;
         }
+        public static void resetCounters() {
+            measureUpdates = 0;
+            layoutUpdates = 0;
+            paintUpdates = 0;
+        }
     }
 }

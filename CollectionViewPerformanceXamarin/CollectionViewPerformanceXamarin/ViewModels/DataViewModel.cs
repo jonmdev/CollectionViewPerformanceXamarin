@@ -72,6 +72,11 @@ namespace CollectionViewPerformanceXamarin.ViewModels
 
 			this.IsBusy = false;
 		}
+		[RelayCommand]
+		private async Task ResetCounters() {
+			UpdateCounter.resetCounters();
+			return;
+		}
 
 		[RelayCommand]
 		private async Task OpenTemplateSwitcher()

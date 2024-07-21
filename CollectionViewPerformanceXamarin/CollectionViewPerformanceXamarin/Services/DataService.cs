@@ -11,8 +11,8 @@ namespace CollectionViewPerformanceXamarin.Services
 		{
 			await Task.Delay(2000);
 
-			return Enumerable.Range(0, 100)
-				.Select(x => new Data())
+			return Enumerable.Range(0, 100) //SETS NUMBER OF ENTRIES
+                .Select(x => new Data())
 				.ToList();
 		}
 	}
