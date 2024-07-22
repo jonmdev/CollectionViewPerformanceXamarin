@@ -9,7 +9,7 @@ namespace CollectionViewPerformanceXamarin {
     public static class UpdateCounter {
 
         public static int measureUpdates = 0;
-        public static int paintUpdates = 0;
+        public static int drawUpdates = 0;
         public static int layoutUpdates = 0;
 
         public static void addMeasureUpdate(string idCode) {
@@ -19,21 +19,21 @@ namespace CollectionViewPerformanceXamarin {
         public static void resetMeasureUpdates() {
             measureUpdates = 0;
         }
-        public static void addPaintUpdate() {
-            paintUpdates++;
-            Debug.WriteLine("PAINT UPDATE " + UpdateCounter.paintUpdates);
+        public static void addDrawUpdate() {
+            drawUpdates++;
+            Debug.WriteLine("DRAW UPDATE " + UpdateCounter.drawUpdates);
         }
         public static void addLayoutUpdate() {
             layoutUpdates++;
             Debug.WriteLine("LAYOUT UPDATE " + UpdateCounter.layoutUpdates);
         }
         public static void resetPaintUpdates() {
-            paintUpdates = 0;
+            drawUpdates = 0;
         }
         public static void resetCounters() {
             measureUpdates = 0;
             layoutUpdates = 0;
-            paintUpdates = 0;
+            drawUpdates = 0;
         }
     }
 }

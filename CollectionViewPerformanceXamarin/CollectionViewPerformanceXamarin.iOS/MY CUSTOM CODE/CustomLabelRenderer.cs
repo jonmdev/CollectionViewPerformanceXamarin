@@ -18,13 +18,15 @@ namespace CollectionViewPerformanceXamarin {
         //https://stackoverflow.com/questions/55101691/custom-label-renderer-in-xamarin-forms-ondraw-never-fired
 
         public CustomAndroidLabelRenderer() {
-            //this.AddOnLayoutChangeListener(new LayoutListener());
             
         }
         public override void Draw(CGRect rect) {
+            UpdateCounter.addDrawUpdate();
             base.Draw(rect);
-            UpdateCounter.addLayoutUpdate();
         }
-        
+        public override void LayoutSubviews() {
+            UpdateCounter.addLayoutUpdate();
+            base.LayoutSubviews();
+        }
     }
 }

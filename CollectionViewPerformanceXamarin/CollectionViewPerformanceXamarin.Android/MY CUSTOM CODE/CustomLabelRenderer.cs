@@ -28,9 +28,12 @@ namespace CollectionViewPerformanceXamarin {
 
         protected override void OnMeasure(int widthMeasureSpec, int heightMeasureSpec) {
             UpdateCounter.addMeasureUpdate(this.GetHashCode().ToString());
-            //System.Diagnostics.Debug.WriteLine("MEASURE UPDATE " + UpdateCounter.measureUpdates);
             base.OnMeasure(widthMeasureSpec, heightMeasureSpec);
         }
-
+        protected override void OnLayout(bool changed, int left, int top, int right, int bottom) {
+            //UpdateCounter.addLayoutUpdate();
+            base.OnLayout(changed, left, top, right, bottom);
+        }
+        
     }
 }
