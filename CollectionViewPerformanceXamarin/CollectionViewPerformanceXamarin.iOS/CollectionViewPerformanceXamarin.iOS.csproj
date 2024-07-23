@@ -75,6 +75,7 @@
     <Compile Include="AppDelegate.cs" />
     <None Include="Entitlements.plist" />
     <None Include="Info.plist" />
+    <Compile Include="MY CUSTOM CODE\CustomImageRenderer.cs" />
     <Compile Include="MY CUSTOM CODE\CustomLabelRenderer.cs" />
     <Compile Include="Properties\AssemblyInfo.cs" />
   </ItemGroup>

@@ -7,33 +7,37 @@ using CollectionViewPerformanceXamarin;
 using Xamarin.Forms;
 using Xamarin.Forms.Platform.Android;
 
-[assembly: ExportRenderer(typeof(Label), typeof(CustomAndroidLabelRenderer))]
+[assembly: ExportRenderer(typeof(Image), typeof(CustomAndroidImageRenderer))]
 
 namespace CollectionViewPerformanceXamarin {
 
-    public class CustomAndroidLabelRenderer : LabelRenderer {
+    public class CustomAndroidImageRenderer : ImageRenderer {
 
         //https://devblogs.microsoft.com/xamarin/extending-xamarin-forms-controls-with-custom-renderers/
         //https://stackoverflow.com/questions/55101691/custom-label-renderer-in-xamarin-forms-ondraw-never-fired
-
-        public CustomAndroidLabelRenderer() {
-            this.AddOnLayoutChangeListener(new LayoutListener());
+        public CustomAndroidImageRenderer(Context context): base(context) {
 
         }
-        class LayoutListener : Java.Lang.Object, IOnLayoutChangeListener {
-            public void OnLayoutChange(Android.Views.View? v, int left, int top, int right, int bottom, int oldLeft, int oldTop, int oldRight, int oldBottom) {
-                UpdateCounter.addLabelLayoutUpdate();
-            }
-        };
+        // AImageView = Android.Widget.ImageView;
+        //https://developer.android.com/reference/android/widget/ImageView
+
+        protected override void DrawableStateChanged() {
+            UpdateCounter.addImageDrawStateUpdate(); //does run 
+            base.DrawableStateChanged();
+        }
+        protected override void OnDraw(Canvas canvas) {
+            UpdateCounter.addImageDrawUpdate(); //doesn't run on xamarin at all
+            base.OnDraw(canvas);
+        }
 
         protected override void OnMeasure(int widthMeasureSpec, int heightMeasureSpec) {
-            UpdateCounter.addLabelMeasureUpdate(this.GetHashCode().ToString());
+            UpdateCounter.addImageMeasureUpdate(this.GetHashCode().ToString());
             base.OnMeasure(widthMeasureSpec, heightMeasureSpec);
         }
         protected override void OnLayout(bool changed, int left, int top, int right, int bottom) {
-            //UpdateCounter.addLayoutUpdate();
+            UpdateCounter.addImageLayoutUpdate();
             base.OnLayout(changed, left, top, right, bottom);
         }
-        
+
     }
 }

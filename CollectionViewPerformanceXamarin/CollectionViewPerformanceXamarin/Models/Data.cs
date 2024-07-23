@@ -3,6 +3,7 @@ using CollectionViewPerformanceXamarin.Helpers;
 using CollectionViewPerformanceXamarin.Resources.Fonts;
 using System;
 using System.Collections.Generic;
+using Xamarin.Forms;
 
 namespace CollectionViewPerformanceXamarin.Models
 {
@@ -23,6 +24,25 @@ namespace CollectionViewPerformanceXamarin.Models
         public List<string> Reviews { get; set; } = new();
 
         public List<string> SocialMedia { get; set; } = new();
+
+        public ImageSource PhotoImageSource { get; set; } = null;
+
+        List<string> imageStrings = new() {
+                "CollectionViewPerformanceXamarin.Resources.Photos.cat1.jpg",
+                "CollectionViewPerformanceXamarin.Resources.Photos.cat2.jpg",
+                "CollectionViewPerformanceXamarin.Resources.Photos.cat3.jpg",
+                "CollectionViewPerformanceXamarin.Resources.Photos.cat4.jpg",
+                "CollectionViewPerformanceXamarin.Resources.Photos.cat5.jpg",
+                "CollectionViewPerformanceXamarin.Resources.Photos.cat6.jpg",
+                "CollectionViewPerformanceXamarin.Resources.Photos.cat7.jpg",
+                "CollectionViewPerformanceXamarin.Resources.Photos.cat8.jpg",
+                "CollectionViewPerformanceXamarin.Resources.Photos.cat9.jpg",
+                "CollectionViewPerformanceXamarin.Resources.Photos.cat10.jpg",
+                "CollectionViewPerformanceXamarin.Resources.Photos.cat11.jpg",
+                "CollectionViewPerformanceXamarin.Resources.Photos.cat12.jpg",
+                "CollectionViewPerformanceXamarin.Resources.Photos.cat13.jpg",
+                "CollectionViewPerformanceXamarin.Resources.Photos.cat14.jpg",
+            };
 
         public Data()
         {
@@ -49,6 +69,7 @@ namespace CollectionViewPerformanceXamarin.Models
                 FontAwesome.Facebook,
                 FontAwesome.Tiktok,
             };
+            this.PhotoImageSource = ImageSource.FromResource(imageStrings[new Random().Next(0,imageStrings.Count)]);
 
             // random.Next(0, 2) == 1; // 50/50 chance
         }

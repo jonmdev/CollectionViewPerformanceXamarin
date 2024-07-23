@@ -12,6 +12,7 @@
 
 		CardWithTheLot, // Worst case scenario
 
-        CardWithComplexContent
+        CardWithComplexContent,
+		CardWithPhoto
     }
 }

@@ -13,7 +13,38 @@
   </PropertyGroup>
 
   <ItemGroup>
+    <None Remove="Resources\Photos\cat1.jpg" />
+    <None Remove="Resources\Photos\cat10.jpg" />
+    <None Remove="Resources\Photos\cat11.jpg" />
+    <None Remove="Resources\Photos\cat12.jpg" />
+    <None Remove="Resources\Photos\cat13.jpg" />
+    <None Remove="Resources\Photos\cat14.jpg" />
+    <None Remove="Resources\Photos\cat2.jpg" />
+    <None Remove="Resources\Photos\cat3.jpg" />
+    <None Remove="Resources\Photos\cat4.jpg" />
+    <None Remove="Resources\Photos\cat5.jpg" />
+    <None Remove="Resources\Photos\cat6.jpg" />
+    <None Remove="Resources\Photos\cat7.jpg" />
+    <None Remove="Resources\Photos\cat8.jpg" />
+    <None Remove="Resources\Photos\cat9.jpg" />
+  </ItemGroup>
+
+  <ItemGroup>
     <EmbeddedResource Include="Resources\Fonts\FontAwesomeBrands.otf" />
+    <EmbeddedResource Include="Resources\Photos\cat1.jpg" />
+    <EmbeddedResource Include="Resources\Photos\cat10.jpg" />
+    <EmbeddedResource Include="Resources\Photos\cat11.jpg" />
+    <EmbeddedResource Include="Resources\Photos\cat12.jpg" />
+    <EmbeddedResource Include="Resources\Photos\cat13.jpg" />
+    <EmbeddedResource Include="Resources\Photos\cat14.jpg" />
+    <EmbeddedResource Include="Resources\Photos\cat2.jpg" />
+    <EmbeddedResource Include="Resources\Photos\cat3.jpg" />
+    <EmbeddedResource Include="Resources\Photos\cat4.jpg" />
+    <EmbeddedResource Include="Resources\Photos\cat5.jpg" />
+    <EmbeddedResource Include="Resources\Photos\cat6.jpg" />
+    <EmbeddedResource Include="Resources\Photos\cat7.jpg" />
+    <EmbeddedResource Include="Resources\Photos\cat8.jpg" />
+    <EmbeddedResource Include="Resources\Photos\cat9.jpg" />
   </ItemGroup>
 
   <ItemGroup>
@@ -23,7 +54,16 @@
   </ItemGroup>
 
   <ItemGroup>
+    <Compile Update="Controls\CardWithPhoto.xaml.cs">
+      <DependentUpon>CardWithPhoto.xaml</DependentUpon>
+    </Compile>
+  </ItemGroup>
+
+  <ItemGroup>
     <EmbeddedResource Update="Controls\ComplexCard.xaml">
+      <Generator>MSBuild:UpdateDesignTimeXaml</Generator>
+    </EmbeddedResource>
+    <EmbeddedResource Update="Controls\CardWithPhoto.xaml">
       <Generator>MSBuild:UpdateDesignTimeXaml</Generator>
     </EmbeddedResource>
   </ItemGroup>
